@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>嘉義一日遊行程</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        #map {
+            height: 400px;
+            width: 100%;
+        }
+        .star-rating {
+            unicode-bidi: bidi-override;
+            direction: rtl;
+            text-align: left;
+        }
+        .star-rating > span {
+            display: inline-block;
+            position: relative;
+            width: 1.1em;
+        }
+        .star-rating > span::before {
+            content: "\2605";
+            position: absolute;
+            color: gold;
+        }
+        .star-rating > span.empty::before {
+            color: lightgray;
+        }
+    </style>
+</head>
+<body class="bg-gray-100 p-4">
+    <div class="container mx-auto bg-white p-6 rounded-lg shadow-md">
+        <h1 class="text-2xl font-bold mb-6 text-center">嘉義一日遊行程規劃</h1>
+
+        <section class="mb-8">
+            <h2 class="text-xl font-semibold mb-4">使用者輸入資訊</h2>
+            <div class="bg-gray-50 p-4 rounded-md">
+                <p><strong>出發地點：</strong>高雄市前鎮區</p>
+                <p><strong>旅遊地點：</strong>嘉義</p>
+                <p><strong>旅遊日期：</strong>2025/05/24</p>
+                <p><strong>每日可用時間：</strong>09:00-18:00</p>
+                <p><strong>交通方式：</strong>駕車</p>
+                <p><strong>預計住宿：</strong>無住宿，回高雄市前鎮區</p>
+                <p><strong>點與點間可接受移動時間：</strong>30分鐘</p>
+                <p><strong>必去景點或餐廳：</strong>無</p>
+                <p><strong>是否有既定行程：</strong>否</p>
+            </div>
+        </section>
+
+        <section class="mb-8">
+            <h2 class="text-xl font-semibold mb-4">行程總覽</h2>
+            <div class="overflow-x-auto">
+                <table class="min-w-full bg-white rounded-md">
+                    <thead>
+                        <tr>
+                            <th class="text-left py-2 px-4 border-b">時間</th>
+                            <th class="text-left py-2 px-4 border-b">地點</th>
+                            <th class="text-left py-2 px-4 border-b">建議停留時間</th>
+                            <th class="text-left py-2 px-4 border-b">交通方式</th>
+                            <th class="text-left py-2 px-4 border-b">預估交通時間</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="py-2 px-4 border-b">約 09:00</td>
+                            <td class="py-2 px-4 border-b">從高雄市前鎮區出發</td>
+                            <td class="py-2 px-4 border-b">-</td>
+                            <td class="py-2 px-4 border-b">駕車</td>
+                            <td class="py-2 px-4 border-b">約 1小時 31分鐘</td>
+                        </tr>
+                        <tr>
+                            <td class="py-2 px-4 border-b">約 10:30 - 12:00</td>
+                            <td class="py-2 px-4 border-b"><a href="https://www.google.com/maps/search/?api=1&query=阿里山林業村車庫園區&query_place_id=ChIJxQNAhDKUbjQR0rls6oi0wfA" target="_blank" class="text-blue-600 hover:underline">阿里山林業村車庫園區</a></td>
+                            <td class="py-2 px-4 border-b">1.5 小時</td>
+                            <td class="py-2 px-4 border-b">駕車</td>
+                            <td class="py-2 px-4 border-b">約 3 分鐘</td>
+                        </tr>
+                        <tr>
+                            <td class="py-2 px-4 border-b">約 12:00 - 13:30</td>
+                            <td class="py-2 px-4 border-b"><a href="https://www.google.com/maps/search/?api=1&query=Second+Floor+%E8%B3%貳樓嘉義秀泰店&query_place_id=ChIJS4LqBdGVbjQRCiorgYJ1RnE" target="_blank" class="text-blue-600 hover:underline">Second Floor 貳樓嘉義秀泰店 (午餐)</a></td>
+                            <td class="py-2 px-4 border-b">1.5 小時</td>
+                            <td class="py-2 px-4 border-b">駕車</td>
+                            <td class="py-2 px-4 border-b">約 3 分鐘</td>
+                        </tr>
+                        <tr>
+                            <td class="py-2 px-4 border-b">約 13:30 - 15:30</td>
+                            <td class="py-2 px-4 border-b"><a href="https://www.google.com/maps/search/?api=1&query=檜意森活村&query_place_id=ChIJOb09b8uVbjQRigoLMNW9rpE" target="_blank" class="text-blue-600 hover:underline">檜意森活村</a></td>
+                            <td class="py-2 px-4 border-b">2 小時</td>
+                            <td class="py-2 px-4 border-b">駕車</td>
+                            <td class="py-2 px-4 border-b">約 5 分鐘</td>
+                        </tr>
+                         <tr>
+                            <td class="py-2 px-4 border-b">約 15:30 - 17:30</td>
+                            <td class="py-2 px-4 border-b"><a href="https://www.google.com/maps/search/?api=1&query=嘉義公園&query_place_id=ChIJw58UX7OVbjQRj_JrF6q5EdA" target="_blank" class="text-blue-600 hover:underline">嘉義公園</a></td>
+                            <td class="py-2 px-4 border-b">2 小時</td>
+                            <td class="py-2 px-4 border-b">駕車</td>
+                            <td class="py-2 px-4 border-b">約 1小時 31分鐘</td>
+                        </tr>
+                         <tr>
+                            <td class="py-2 px-4 border-b">約 17:30</td>
+                            <td class="py-2 px-4 border-b">從嘉義公園返回高雄市前鎮區</td>
+                            <td class="py-2 px-4 border-b">-</td>
+                            <td class="py-2 px-4 border-b">駕車</td>
+                            <td class="py-2 px-4 border-b">-</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <section class="mb-8">
+            <h2 class="text-xl font-semibold mb-4">景點地圖與動線</h2>
+            <div id="map" class="rounded-md"></div>
+        </section>
+
+        <section>
+            <h2 class="text-xl font-semibold mb-4">推薦餐廳</h2>
+            <div class="bg-gray-50 p-4 rounded-md">
+                <p><strong>Second Floor 貳樓嘉義秀泰店</strong></p>
+                <p>地址: 600, Taiwan, Chiayi City, West District, Wenhua Rd, 299號一樓</p>
+                <p>Google Maps 評價: <span class="star-rating"><span>★</span><span>★</span><span>★</span><span>★</span><span class="empty">★</span></span> 4.5</p>
+                 <p><a href="https://www.google.com/maps/search/?api=1&query=Second+Floor+%E8%B3%貳樓嘉義秀泰店&query_place_id=ChIJS4LqBdGVbjQRCiorgYJ1RnE" target="_blank" class="text-blue-600 hover:underline">在 Google Maps 上查看</a></p>
+            </div>
+        </section>
+    </div>
+
+    <script>
+        function initMap() {
+            const origin = { lat: 22.5970794, lng: 120.3147208 }; // 高雄市前鎮區
+            const stop1 = { lat: 23.4863428, lng: 120.4512608 }; // 阿里山林業村車庫園區
+            const stop2 = { lat: 23.4855667, lng: 120.4479124 }; // Second Floor 貳樓嘉義秀泰店
+            const stop3 = { lat: 23.4856377, lng: 120.454812 }; // 檜意森活村
+            const stop4 = { lat: 23.4833299, lng: 120.4652307 }; // 嘉義公園
+
+            const waypoints = [
+                { location: stop1, stopover: true },
+                { location: stop2, stopover: true },
+                { location: stop3, stopover: true },
+                { location: stop4, stopover: true },
+            ];
+
+            const map = new google.maps.Map(document.getElementById("map"), {
+                zoom: 12,
+                center: stop1, // Center map around the first stop in Chiayi
+            });
+
+            const directionsService = new google.maps.DirectionsService();
+            const directionsRenderer = new google.maps.DirectionsRenderer({
+                map: map,
+                suppressMarkers: true, // We will add custom markers
+            });
+
+            const route = {
+                origin: origin,
+                destination: origin, // Round trip
+                waypoints: waypoints,
+                optimizeWaypoints: false,
+                travelMode: google.maps.TravelMode.DRIVING,
+            };
+
+            directionsService.route(route, (response, status) => {
+                if (status === "OK") {
+                    directionsRenderer.setDirections(response);
+
+                    const leg = response.routes[0].legs[0]; // Leg from origin to first stop
+                    addMarker(leg.start_location, map, 0, "高雄市前鎮區 (出發/結束)");
+
+                    // Add markers for waypoints
+                    for (let i = 0; i < leg.via_waypoints.length; i++) {
+                         const waypointLeg = response.routes[0].legs[i+1];
+                         addMarker(waypointLeg.start_location, map, i + 1, waypointLeg.start_address);
+                    }
+                     // Add marker for the last destination
+                    const lastLeg = response.routes[0].legs[response.routes[0].legs.length - 1];
+                    addMarker(lastLeg.end_location, map, waypoints.length + 1, lastLeg.end_address);
+
+
+                } else {
+                    window.alert("Directions request failed due to " + status);
+                }
+            });
+
+             function addMarker(location, map, number, title) {
+                const marker = new google.maps.Marker({
+                    position: location,
+                    label: String(number),
+                    map: map,
+                    title: title,
+                });
+
+                const infoWindow = new google.maps.InfoWindow({
+                    content: `<div><strong>${title}</strong></div>`,
+                });
+
+                marker.addListener("click", () => {
+                    infoWindow.open(map, marker);
+                });
+            }
+        }
+    </script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCZfwU6WZDpbss1iWC79nJu_CTtSRIoWJ4&libraries=geometry&callback=initMap" async defer></script>
+</body>
+</html>
